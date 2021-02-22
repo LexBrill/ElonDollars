@@ -22,7 +22,6 @@ negative_words = open("negative-words.txt", "r")
 
 
 for word in tweet_list:
-    is_stock_word = False
     if len(word) >= 3:
         # print(word)
         f = open('nasdaq_screener_1613975622995.csv', 'rt')
@@ -33,7 +32,6 @@ for word in tweet_list:
                 is_stock_word = True
                 stock_words.append(row[0])
                 # print(word + " " + row[0] + " " + row[1])
-    if not is_stock_word:
         positive_list = lines_that_equal(word, positive_words)
         negative_list = lines_that_equal(word, negative_words)
         if len(positive_list) != 0:
