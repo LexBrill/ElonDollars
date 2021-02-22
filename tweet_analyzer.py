@@ -9,13 +9,13 @@ net_sentiment = 0
 regex = re.compile('[,\.!?]')
 tweet = "i love etsy"
 tweet = regex.sub('', tweet).lower()
-print(tweet)
+# print(tweet)
 
 
 stock_words = []
 
 tweet_list = tweet.split()
-print(tweet_list)
+# print(tweet_list)
     
 positive_words = open("positive-words.txt", "r")
 negative_words = open("negative-words.txt", "r")
@@ -32,7 +32,7 @@ for word in tweet_list:
                 # print(word)
                 is_stock_word = True
                 stock_words.append(row[0])
-                print(word + " " + row[0] + " " + row[1])
+                # print(word + " " + row[0] + " " + row[1])
     if not is_stock_word:
         positive_list = lines_that_equal(word, positive_words)
         negative_list = lines_that_equal(word, negative_words)
